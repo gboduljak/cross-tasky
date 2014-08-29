@@ -115,6 +115,21 @@ Todo* Db::Get(const QString &title) const
 
 }
 
+QSqlQueryModel *Db::GetTable() const
+{
+    auto task=[&](){
+        QSqlQuery qry;
+        QSqlQueryModel * model= new QSqlQueryModel;
+        if(qry.exec("SELECT * FROM Todos"))
+        {
+            model->setQuery(qry);
+        }
+        return model;
+    };
+
+    return Task::run<QSqlQueryModel *>(task).await();
+}
+
 bool Db::Insert(const Todo &todo)
 {
     auto task=[&](){

@@ -19,10 +19,7 @@ CreateTodo::CreateTodo(QWidget *parent) : QDialog(parent),
          QMessageBox::critical(this,"Error","Database didn't open' :(");
          this->close();
     }
-    if(!_db->Open()){
-         QMessageBox::critical(this,"Error","Database didn't open' :(");
-         this->close();
-    }
+
 
 
 }

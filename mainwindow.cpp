@@ -11,6 +11,7 @@
 #include "createtodo.h"
 #include <QMouseEvent>
 #include "tododetailsdialog.h"
+#include "tableviewdialog.h"
 
 
 
@@ -136,4 +137,10 @@ void MainWindow::on_actionClear_Database_triggered()
 void MainWindow::on_todosList_itemSelectionChanged()
 {
     _todo = _db->Get(ui->todosList->currentItem()->text());
+}
+
+void MainWindow::on_actionTable_View_triggered()
+{
+    _tableViewDialog=new TableViewDialog(this);
+    _tableViewDialog->show();
 }

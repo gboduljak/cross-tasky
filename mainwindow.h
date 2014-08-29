@@ -6,6 +6,7 @@
 #include "todo.h"
 #include "createtodo.h"
 #include "tododetailsdialog.h"
+#include "tableviewdialog.h"
 
 #include <QList>
 #include <QListWidgetItem>
@@ -35,6 +36,8 @@ private slots:
 
     void on_todosList_itemSelectionChanged();
 
+    void on_actionTable_View_triggered();
+
 private:
     void loaded();
     void mousePressEvent(QMouseEvent *event);
@@ -46,6 +49,7 @@ private:
     Todo * _todo;
     CreateTodo * _createTodoDialog;
     TodoDetailsDialog * _todoDetailsDialog;
+    TableViewDialog * _tableViewDialog;
 };
 
 #endif // MAINWINDOW_H

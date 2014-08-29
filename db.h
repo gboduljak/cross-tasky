@@ -3,6 +3,7 @@
 
 #include <QSql>
 #include <QSqlDatabase>
+#include <QSqlQueryModel>
 #include <QList>
 #include "todo.h"
 #include "task.h"
@@ -14,6 +15,7 @@ public:
     ~Db();
     QList<Todo*> Get();
     Todo * Get(const QString &title) const;
+    QSqlQueryModel * GetTable() const;
     bool executeQuery(const QString &cmd) const;
     bool Open();
     bool Insert(const Todo &todo);
