@@ -2,5 +2,16 @@
     <qresource prefix="/">
         <file>icon-error.jpg</file>
         <file>icon-ok.jpg</file>
+        <file>icon-error.png</file>
+        <file>icon-ok.png</file>
+        <file>icon-list.png</file>
+        <file>icon-edit.png</file>
+        <file>logo.png</file>
+        <file>icon-refresh.png</file>
+        <file>icon-trash.png</file>
+        <file>header-create.png</file>
+        <file>header-details.png</file>
+        <file>header-edit.png</file>
+        <file>icon-table.png</file>
     </qresource>
 </RCC>

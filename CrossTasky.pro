@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui sql
+QMAKE_CXXFLAGS += -std=c++0x
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -16,18 +17,21 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     db.cpp\
     todo.cpp \
-    createtodo.cpp
+    createtodo.cpp \
+    tododetailsdialog.cpp
 
 
 HEADERS  += mainwindow.h \
     task.h \
     db.h \
     todo.h \
-    createtodo.h
+    createtodo.h \
+    tododetailsdialog.h
 
 
 FORMS    += mainwindow.ui \
-    createtodo.ui
+    createtodo.ui \
+    tododetailsdialog.ui
 
 RESOURCES += \
     resource.qrc

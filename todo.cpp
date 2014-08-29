@@ -9,8 +9,8 @@ Todo::Todo(int id, QString &title, QString &description, bool isCompleted)
 {
     _id=id;
     _title=title;
-   _description=description;
-      _isCompleted=isCompleted;
+    _description=description;
+    _isCompleted=isCompleted;
 }
 
 const int Todo::id() const
@@ -47,7 +47,7 @@ void Todo::setTitle(QString &newTitle)
         _title=newTitle;
     }
 }
-void Todo::setDescription( QString &newDescription)
+void Todo::setDescription(QString &newDescription)
 {
     if(_description != newDescription )
     {

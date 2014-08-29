@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>539</width>
-    <height>330</height>
+    <width>579</width>
+    <height>385</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,27 +18,51 @@
     <item row="0" column="0">
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
-       <widget class="QLabel" name="label">
-        <property name="text">
-         <string>TextLabel</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="verticalSpacer">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeType">
-         <enum>QSizePolicy::Fixed</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="autoFillBackground">
+           <bool>true</bool>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="resource.qrc">:/logo.png</pixmap>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="exitButton">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="resource.qrc">
+            <normaloff>:/icon-error.png</normaloff>:/icon-error.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>32</width>
+            <height>32</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout">
@@ -52,7 +76,7 @@
             <property name="minimumSize">
              <size>
               <width>0</width>
-              <height>30</height>
+              <height>40</height>
              </size>
             </property>
             <property name="sizeIncrement">
@@ -62,12 +86,22 @@
              </size>
             </property>
             <property name="text">
-             <string>Refresh</string>
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="resource.qrc">
+              <normaloff>:/icon-refresh.png</normaloff>:/icon-refresh.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>30</width>
+              <height>30</height>
+             </size>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_5">
+           <widget class="QPushButton" name="detailsButton">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -76,6 +110,10 @@
             </property>
             <property name="text">
              <string>Details</string>
+            </property>
+            <property name="icon">
+             <iconset resource="resource.qrc">
+              <normaloff>:/icon-list.png</normaloff>:/icon-list.png</iconset>
             </property>
            </widget>
           </item>
@@ -90,6 +128,10 @@
             <property name="text">
              <string>Create</string>
             </property>
+            <property name="icon">
+             <iconset resource="resource.qrc">
+              <normaloff>:/icon-edit.png</normaloff>:/icon-edit.png</iconset>
+            </property>
            </widget>
           </item>
           <item>
@@ -103,10 +145,14 @@
             <property name="text">
              <string>Edit</string>
             </property>
+            <property name="icon">
+             <iconset resource="resource.qrc">
+              <normaloff>:/icon-edit.png</normaloff>:/icon-edit.png</iconset>
+            </property>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_4">
+           <widget class="QPushButton" name="deleteButton">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -115,6 +161,10 @@
             </property>
             <property name="text">
              <string>Delete</string>
+            </property>
+            <property name="icon">
+             <iconset resource="resource.qrc">
+              <normaloff>:/icon-trash.png</normaloff>:/icon-trash.png</iconset>
             </property>
            </widget>
           </item>
@@ -151,7 +201,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>539</width>
+     <width>579</width>
      <height>21</height>
     </rect>
    </property>
@@ -160,23 +210,55 @@
      <string>File</string>
     </property>
     <addaction name="actionCreate"/>
+    <addaction name="actionClear_Database"/>
    </widget>
    <widget class="QMenu" name="menuAbout">
     <property name="title">
+     <string>View</string>
+    </property>
+    <addaction name="actionTable_View"/>
+   </widget>
+   <widget class="QMenu" name="menuAbout_2">
+    <property name="title">
      <string>About</string>
     </property>
+    <addaction name="actionBy_Gabrijel_B_2"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuAbout"/>
+   <addaction name="menuAbout_2"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionCreate">
    <property name="icon">
     <iconset resource="resource.qrc">
-     <normaloff>:/icon-ok.jpg</normaloff>:/icon-ok.jpg</iconset>
+     <normaloff>:/icon-edit.png</normaloff>:/icon-edit.png</iconset>
    </property>
    <property name="text">
     <string>Create</string>
+   </property>
+  </action>
+  <action name="actionClear_Database">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/icon-trash.png</normaloff>:/icon-trash.png</iconset>
+   </property>
+   <property name="text">
+    <string>Clear Database</string>
+   </property>
+  </action>
+  <action name="actionTable_View">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/icon-table.png</normaloff>:/icon-table.png</iconset>
+   </property>
+   <property name="text">
+    <string>Table View</string>
+   </property>
+  </action>
+  <action name="actionBy_Gabrijel_B_2">
+   <property name="text">
+    <string>by Gabrijel B.</string>
    </property>
   </action>
  </widget>
@@ -198,6 +280,22 @@
     <hint type="destinationlabel">
      <x>489</x>
      <y>164</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>exitButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>545</x>
+     <y>68</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>289</x>
+     <y>192</y>
     </hint>
    </hints>
   </connection>
