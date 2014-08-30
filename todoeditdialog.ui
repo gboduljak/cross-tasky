@@ -1,43 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>CreateTodo</class>
- <widget class="QDialog" name="CreateTodo">
+ <class>TodoEditDialog</class>
+ <widget class="QDialog" name="TodoEditDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>565</width>
-    <height>374</height>
+    <width>643</width>
+    <height>533</height>
    </rect>
   </property>
-  <property name="minimumSize">
-   <size>
-    <width>500</width>
-    <height>350</height>
-   </size>
-  </property>
-  <property name="maximumSize">
-   <size>
-    <width>16777215</width>
-    <height>16777215</height>
-   </size>
-  </property>
   <property name="windowTitle">
-   <string notr="true">Cross Tasky - Create Task</string>
+   <string>Dialog</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_3">
+    <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QLabel" name="label">
-       <property name="cursor">
-        <cursorShape>ArrowCursor</cursorShape>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>75</height>
+        </size>
        </property>
        <property name="text">
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap resource="resource.qrc">:/header-create.png</pixmap>
+        <pixmap resource="resource.qrc">:/header-edit.png</pixmap>
        </property>
       </widget>
      </item>
@@ -48,7 +39,7 @@
        </property>
        <property name="sizeHint" stdset="0">
         <size>
-         <width>40</width>
+         <width>118</width>
          <height>20</height>
         </size>
        </property>
@@ -80,7 +71,7 @@
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout">
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
         <item>
          <widget class="QLabel" name="label_2">
           <property name="font">
@@ -90,12 +81,18 @@
            </font>
           </property>
           <property name="text">
-           <string>Title</string>
+           <string>ID</string>
+          </property>
+          <property name="textFormat">
+           <enum>Qt::PlainText</enum>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QPlainTextEdit" name="titleText">
+         <widget class="QPlainTextEdit" name="idTextEdit">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
           <property name="minimumSize">
            <size>
             <width>0</width>
@@ -119,9 +116,9 @@
        </layout>
       </item>
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
         <item>
-         <widget class="QLabel" name="label_3">
+         <widget class="QLabel" name="label_4">
           <property name="font">
            <font>
             <family>Segoe UI</family>
@@ -129,12 +126,30 @@
            </font>
           </property>
           <property name="text">
-           <string>Description</string>
+           <string>Title</string>
+          </property>
+          <property name="textFormat">
+           <enum>Qt::PlainText</enum>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QPlainTextEdit" name="descriptionText">
+         <widget class="QPlainTextEdit" name="titleText">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>30</height>
+           </size>
+          </property>
           <property name="font">
            <font>
             <family>Segoe UI</family>
@@ -146,7 +161,52 @@
        </layout>
       </item>
       <item>
-       <widget class="QCheckBox" name="isCompletedCheckBox">
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QLabel" name="label_5">
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Description</string>
+          </property>
+          <property name="textFormat">
+           <enum>Qt::PlainText</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPlainTextEdit" name="descripitonText">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="checkBox">
         <property name="font">
          <font>
           <family>Segoe UI</family>
@@ -162,18 +222,19 @@
     </widget>
    </item>
    <item>
-    <widget class="QPushButton" name="createButton">
-     <property name="font">
-      <font>
-       <family>Segoe UI</family>
-      </font>
-     </property>
+    <widget class="QPushButton" name="saveButton">
      <property name="text">
-      <string>Create</string>
+      <string>Save</string>
      </property>
      <property name="icon">
       <iconset resource="resource.qrc">
-       <normaloff>:/icon-edit.png</normaloff>:/icon-edit.png</iconset>
+       <normaloff>:/icon-list.png</normaloff>:/icon-list.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
      </property>
     </widget>
    </item>
@@ -186,16 +247,16 @@
   <connection>
    <sender>exitButton</sender>
    <signal>clicked()</signal>
-   <receiver>CreateTodo</receiver>
+   <receiver>TodoEditDialog</receiver>
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>471</x>
-     <y>29</y>
+     <x>610</x>
+     <y>46</y>
     </hint>
     <hint type="destinationlabel">
-     <x>249</x>
-     <y>174</y>
+     <x>321</x>
+     <y>266</y>
     </hint>
    </hints>
   </connection>

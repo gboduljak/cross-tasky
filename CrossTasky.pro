@@ -19,7 +19,8 @@ SOURCES += main.cpp\
     todo.cpp \
     createtodo.cpp \
     tododetailsdialog.cpp \
-    tableviewdialog.cpp
+    tableviewdialog.cpp \
+    todoeditdialog.cpp
 
 
 HEADERS  += mainwindow.h \
@@ -28,13 +29,15 @@ HEADERS  += mainwindow.h \
     todo.h \
     createtodo.h \
     tododetailsdialog.h \
-    tableviewdialog.h
+    tableviewdialog.h \
+    todoeditdialog.h
 
 
 FORMS    += mainwindow.ui \
     createtodo.ui \
     tododetailsdialog.ui \
-    tableviewdialog.ui
+    tableviewdialog.ui \
+    todoeditdialog.ui
 
 RESOURCES += \
     resource.qrc

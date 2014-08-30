@@ -157,6 +157,40 @@ bool Db::Insert(const Todo &todo)
 
 }
 
+bool Db::Update(int id, QString &newTitle, QString &newDescription, bool newIsCompleted)
+{
+    auto task =[&](){
+        QString qryStr;
+        if(newIsCompleted)
+        {
+            qryStr=QString("UPDATE Todos SET Title='%1', Description='%2', IsCompleted=1 WHERE Id=%3;").arg(newTitle,newDescription,QString::number(id));
+        }
+        else
+        {
+             qryStr=QString("UPDATE Todos SET Title='%1', Description='%2', IsCompleted=0 WHERE Id=%3;").arg(newTitle,newDescription,QString::number(id));
+        }
+        //
+        if(this->executeQuery(qryStr))
+        {
+             return true;
+        }
+        return false;
+    };
+
+    return Task::run<bool>(task).await();
+}
+
+bool Db::Delete(const QString &title) const
+{
+    auto task =[&](){
+        QString qryStr=QString("DELETE FROM Todos WHERE Title = '%1'").arg(title);
+        return this->executeQuery(qryStr);
+    };
+
+    return Task::run<bool>(task).await();
+
+}
+
 bool Db::ClearDatabase() const
 {
     auto task =[&](){

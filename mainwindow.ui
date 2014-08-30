@@ -108,6 +108,11 @@
               <height>30</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <family>Segoe UI</family>
+             </font>
+            </property>
             <property name="text">
              <string>Details</string>
             </property>
@@ -125,6 +130,11 @@
               <height>30</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <family>Segoe UI</family>
+             </font>
+            </property>
             <property name="text">
              <string>Create</string>
             </property>
@@ -135,12 +145,17 @@
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_3">
+           <widget class="QPushButton" name="editButton">
             <property name="minimumSize">
              <size>
               <width>0</width>
               <height>30</height>
              </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Segoe UI</family>
+             </font>
             </property>
             <property name="text">
              <string>Edit</string>
@@ -158,6 +173,11 @@
               <width>0</width>
               <height>30</height>
              </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Segoe UI</family>
+             </font>
             </property>
             <property name="text">
              <string>Delete</string>

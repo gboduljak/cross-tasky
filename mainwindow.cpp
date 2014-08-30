@@ -144,3 +144,30 @@ void MainWindow::on_actionTable_View_triggered()
     _tableViewDialog=new TableViewDialog(this);
     _tableViewDialog->show();
 }
+
+void MainWindow::on_deleteButton_clicked()
+{
+    if(ui->todosList->currentItem())
+    {
+        if(_db->Delete(_todo->title()))
+        {
+            emit ui->refreshButton->clicked();
+            QMessageBox::information(this,"Success","The task was deleted.");
+        }
+    }
+}
+
+void MainWindow::on_editButton_clicked()
+{
+    if(ui->todosList->currentItem())
+    {
+        _todoEditDialog= new TodoEditDialog(this);
+        _todoEditDialog->setId(_todo->id());
+        _todoEditDialog->setTitle(_todo->title());
+        _todoEditDialog->setDescription(_todo->description());
+        _todoEditDialog->setIsCompleted(_todo->isCompleted());
+        _todoEditDialog->show();
+    }
+
+
+}

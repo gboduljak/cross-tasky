@@ -20,7 +20,7 @@ public:
     bool Open();
     bool Insert(const Todo &todo);
     bool Update(int id,QString &newTitle, QString &newDescription, bool newIsCompleted);
-    bool Delete(int id) const;
+    bool Delete(const QString &title) const;
     bool ClearDatabase() const;
     int lastInsertId();
 

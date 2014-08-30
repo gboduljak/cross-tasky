@@ -45,7 +45,6 @@ void TodoDetailsDialog::setId(const int &id)
     ui->idLabel->setText(QString("ID : %1").arg(QString::number(id)));
 }
 
-
 void TodoDetailsDialog::setIsCompleted(const bool isCompleted)
 {
     if(_isCompleted!=isCompleted)

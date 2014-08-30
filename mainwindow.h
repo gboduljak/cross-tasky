@@ -7,6 +7,7 @@
 #include "createtodo.h"
 #include "tododetailsdialog.h"
 #include "tableviewdialog.h"
+#include "todoeditdialog.h"
 
 #include <QList>
 #include <QListWidgetItem>
@@ -38,6 +39,10 @@ private slots:
 
     void on_actionTable_View_triggered();
 
+    void on_deleteButton_clicked();
+
+    void on_editButton_clicked();
+
 private:
     void loaded();
     void mousePressEvent(QMouseEvent *event);
@@ -48,6 +53,7 @@ private:
     Db *_db;
     Todo * _todo;
     CreateTodo * _createTodoDialog;
+    TodoEditDialog * _todoEditDialog;
     TodoDetailsDialog * _todoDetailsDialog;
     TableViewDialog * _tableViewDialog;
 };
