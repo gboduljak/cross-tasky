@@ -13,5 +13,6 @@
         <file>header-details.png</file>
         <file>header-edit.png</file>
         <file>icon-table.png</file>
+        <file>icon.ico</file>
     </qresource>
 </RCC>

@@ -41,3 +41,10 @@ FORMS    += mainwindow.ui \
 
 RESOURCES += \
     resource.qrc
+
+
+win32:RC_ICONS += icon.ico
+RC_FILE = icon-resource.rc
+
+OTHER_FILES += \
+    icon-resource.rc
